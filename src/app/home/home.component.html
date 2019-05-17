@@ -1,0 +1,12 @@
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">EVENTS</h5>
+      <div class="list-group">
+        <a *ngFor="let e of events; let i=index;" routerLink="/event/{{e.id}}" class="list-group-item list-group-item-action">{{e.title}}</a>
+      </div>
+      <br>
+      <a href="#" class="btn btn-primary">Add Events</a>
+    </div>
+  </div>
+
