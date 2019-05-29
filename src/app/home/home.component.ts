@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import 'hammerjs';
+
 
 @Component({
   selector: 'app-home',

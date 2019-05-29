@@ -1,0 +1,29 @@
+<div class="card" *ngIf="tickets">
+    <div class="card-header">
+        <h5 class="card-title">{{tickets.event.title | uppercase}} </h5>
+        <h6 class="card-subtitle">TIKET {{tickets.category | uppercase}} </h6>
+      </div>
+  <div class="card-body">
+      <form>
+          <div class="form-group">
+            <label>Nama</label>
+            <input  class="form-control" placeholder="Nama Customer"/>
+            <br>
+            <label>Email</label>
+            <input  class="form-control" placeholder="Email Customer"/>
+            <br>
+          <label>Banyaknya Tiket</label>
+          <input  class="form-control" placeholder="Banyaknya Tiket"/>
+    <br>
+          <label>Tanggal Event</label>
+
+          <p>{{tickets.event.schedule | date}}</p>
+        </div> 
+            </form>
+            <button class="btn btn-outline-primary btn-lg btn-block">Pesan</button>
+            
+  </div>
+  <div class="card-footer text-muted">
+      <div class="text-center">- {{tickets.category | uppercase}} -</div>
+  </div>
+  </div>

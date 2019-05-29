@@ -42,6 +42,21 @@ export class RestService {
     );
   }
 
+  removeEvent (id): Observable<any> {
+    console.log(id);
+    return this.http.post<any>(endpoint + 'deleteevent', JSON.stringify(id), httpOptions).pipe(
+      tap((event) => console.log(`event deleted w/ id=${id}`)),
+      catchError(this.handleError<any>('addEvent'))
+    );
+  }
+
+  deleteEvent (id): Observable<any> {
+    return this.http.delete<any>(endpoint + 'delevent' + id, httpOptions).pipe(
+      tap(_ => console.log(`deleted product id=${id}`)),
+      catchError(this.handleError<any>('deleteProduct'))
+    );
+  }
+
   register (userData): Observable<any> {
     console.log(userData);
     return this.http.post<any>(endpoint + 'registercustomer', JSON.stringify(userData), httpOptions).pipe(
@@ -81,8 +96,8 @@ export class RestService {
     );
   }
 
-  getTickets(): Observable<any> {
-    return this.http.get(endpoint + 'ticket').pipe(
+  getTickets(id): Observable<any> {
+    return this.http.get(endpoint + 'ticketfromevent/' + id).pipe(
       map(this.extractData));
   }
 

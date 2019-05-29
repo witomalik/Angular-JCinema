@@ -6,7 +6,8 @@
         <a *ngFor="let e of events; let i=index;" routerLink="/event/{{e.id}}" class="list-group-item list-group-item-action">{{e.title}}</a>
       </div>
       <br>
-      <a href="#" class="btn btn-primary">Add Events</a>
     </div>
   </div>
+  <br>
+  <a routerLink="/event-add/" class="btn btn-outline-primary btn-lg btn-block">Add Events</a>
 
